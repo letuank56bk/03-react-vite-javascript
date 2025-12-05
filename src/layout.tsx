@@ -4,13 +4,13 @@ import AppFooter from "./components/layout/app.footer"
 
 function Layout() {
 
-  return (
-    <div>
-      <AppHeader />
-      <Outlet />
-      <AppFooter />
-    </div>
-  )
+    return (
+        <div>
+            <AppHeader />
+            <Outlet />
+            <AppFooter />
+        </div>
+    )
 }
 
 export default Layout

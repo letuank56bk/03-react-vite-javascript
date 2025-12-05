@@ -1,9 +1,18 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-const AppContext = createContext(null);
+interface AppContextType {
+    theme: string;
+    setTheme: (theme: string) => void;
+}
 
-export const AppContextProvider = (props) => {
-    const [theme, setTheme] = useState(() => {
+const AppContext = createContext<AppContextType | null>(null);
+
+interface AppContextProviderProps {
+    children: ReactNode;
+}
+
+export const AppContextProvider = (props: AppContextProviderProps) => {
+    const [theme, setTheme] = useState<string>(() => {
         const initialTheme = localStorage.getItem("theme") || "light";
         return initialTheme;
     });
@@ -25,7 +34,7 @@ export const AppContextProvider = (props) => {
     );
 }
 
-export const useCurrentApp = () => {
+export const useCurrentApp = (): AppContextType => {
     const currentAppContext = useContext(AppContext);
 
     if (!currentAppContext) {
@@ -36,3 +45,4 @@ export const useCurrentApp = () => {
 
     return currentAppContext;
 };
+
