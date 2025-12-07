@@ -17,7 +17,7 @@ export const EXPERIENCES = [
         id: 1,
         title: {
             vi: "Lập Trình Viên",
-            en: "Fullstack Developer"
+            en: "Fullstack Developer  - update"
         },
         company: {
             vi: "Công ty ABCXYZ Ltd.",

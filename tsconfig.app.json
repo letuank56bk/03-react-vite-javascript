@@ -21,7 +21,28 @@
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true
+        "noFallthroughCasesInSwitch": true,
+        "baseUrl": ".", // Pham vi hoat dong của các file typeScript
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+            "assets/*": [
+                "./src/assets/*"
+            ],
+            "components/*": [
+                "./src/components/*"
+            ],
+            "pages/*": [
+                "./src/pages/*"
+            ],
+            "styles/*": [
+                "./src/styles/*"
+            ],
+            "helpers/*": [
+                "./src/helpers/*"
+            ]
+        }
     },
     "include": [
         "src"
