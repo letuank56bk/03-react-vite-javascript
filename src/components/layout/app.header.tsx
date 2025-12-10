@@ -6,8 +6,10 @@ import { Link, NavLink } from 'react-router-dom';
 import { useCurrentApp } from '../context/app.context';
 import { useTranslation } from 'react-i18next';
 import { NavDropdown } from 'react-bootstrap';
-import viFlag from '../../assets/svg/language/vi.svg?url';
-import enFlag from '../../assets/svg/language/en.svg?url';
+import viFlag from 'assets/svg/language/vi.svg?url';
+import enFlag from 'assets/svg/language/en.svg?url';
+
+type ThemeContextType = "light" | "dark";
 
 function AppHeader() {
     const { theme, setTheme } = useCurrentApp();
@@ -16,7 +18,7 @@ function AppHeader() {
     const handleMode = (mode: string) => {
         localStorage.setItem("theme", mode);
         document.documentElement.setAttribute('data-bs-theme', mode);
-        setTheme(mode);
+        setTheme(mode as ThemeContextType);
     }
 
     const renderFlag = (language: string) => {
