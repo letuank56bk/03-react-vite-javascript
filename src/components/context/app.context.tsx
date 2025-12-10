@@ -32,7 +32,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     );
 }
 
-export const useCurrentApp = (): AppContextType => {
+export const useCurrentApp = (): IAppContext => {
     const currentAppContext = useContext(AppContext);
 
     if (!currentAppContext) {
